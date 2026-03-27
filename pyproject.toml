@@ -7,6 +7,7 @@ dependencies = [
     "alt-python-pydbc-core",
     "alt-python-pydbc-sqlite",
     "alt-python-pydbc-pg",
+    "alt-python-pydbc-mysql",
 ]
 
 [tool.uv.workspace]
@@ -14,12 +15,14 @@ members = [
     "packages/core",
     "packages/sqlite",
     "packages/pg",
+    "packages/mysql",
 ]
 
 [tool.uv.sources]
 alt-python-pydbc-core = { workspace = true }
 alt-python-pydbc-sqlite = { workspace = true }
 alt-python-pydbc-pg = { workspace = true }
+alt-python-pydbc-mysql = { workspace = true }
 
 [dependency-groups]
 dev = [
