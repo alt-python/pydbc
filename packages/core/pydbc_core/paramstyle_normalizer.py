@@ -149,6 +149,26 @@ class ParamstyleNormalizer:
         return out_sql, values
 
     # ------------------------------------------------------------------ #
+    # Private helpers — named-SQL + positional params
+    # ------------------------------------------------------------------ #
+
+    @staticmethod
+    def _strip_named_to_positional(
+        sql: str,
+        params: tuple | list,
+        placeholder: str,
+    ) -> tuple[str, tuple]:
+        """Replace ``:name`` tokens in *sql* with *placeholder*, preserving
+        positional-param order.
+
+        Used when callers supply a positional tuple against SQL that contains
+        ``:name`` markers (e.g. PreparedStatement binds by index but the SQL
+        template was written with named params).
+        """
+        out_sql = _NAMED_PARAM_RE.sub(placeholder, sql)
+        return out_sql, tuple(params)
+
+    # ------------------------------------------------------------------ #
     # Target-paramstyle dispatch methods
     # ------------------------------------------------------------------ #
 
@@ -156,18 +176,24 @@ class ParamstyleNormalizer:
     def _to_qmark(sql: str, params: tuple | list | dict) -> tuple[str, tuple]:
         if isinstance(params, dict):
             return ParamstyleNormalizer._named_to_positional(sql, params, "?")
+        if _NAMED_PARAM_RE.search(sql):
+            return ParamstyleNormalizer._strip_named_to_positional(sql, params, "?")
         return ParamstyleNormalizer._positional_to_qmark(sql, params)
 
     @staticmethod
     def _to_format(sql: str, params: tuple | list | dict) -> tuple[str, tuple]:
         if isinstance(params, dict):
             return ParamstyleNormalizer._named_to_positional(sql, params, "%s")
+        if _NAMED_PARAM_RE.search(sql):
+            return ParamstyleNormalizer._strip_named_to_positional(sql, params, "%s")
         return ParamstyleNormalizer._positional_to_format(sql, params)
 
     @staticmethod
     def _to_pyformat(sql: str, params: tuple | list | dict) -> tuple[str, tuple | dict]:
         if isinstance(params, dict):
             return ParamstyleNormalizer._named_to_pyformat(sql, params)
+        if _NAMED_PARAM_RE.search(sql):
+            return ParamstyleNormalizer._strip_named_to_positional(sql, params, "%s")
         return ParamstyleNormalizer._positional_to_pyformat(sql, params)
 
     @staticmethod
@@ -185,4 +211,14 @@ class ParamstyleNormalizer:
     def _to_numeric(sql: str, params: tuple | list | dict) -> tuple[str, tuple]:
         if isinstance(params, dict):
             return ParamstyleNormalizer._named_to_numeric(sql, params)
+        if _NAMED_PARAM_RE.search(sql):
+            # Replace :name with :1, :2, … preserving positional order.
+            counter = [0]
+
+            def _replacer(_match: re.Match) -> str:
+                counter[0] += 1
+                return f":{counter[0]}"
+
+            out_sql = _NAMED_PARAM_RE.sub(_replacer, sql)
+            return out_sql, tuple(params)
         return ParamstyleNormalizer._positional_to_numeric(sql, params)
