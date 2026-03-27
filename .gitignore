@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+
+# Testing
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# macOS
+.DS_Store
+
+# GSD
+.gsd/
+
+# Misc
+*.log
+*.swp
+*.swo
+*~
+tmp/
+.bg-shell/
+
+# ── GSD baseline (auto-generated) ──
+.gsd
+Thumbs.db
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+target/
+vendor/
+.cache/

@@ -1,0 +1,28 @@
+[project]
+name = "alt-python-pydbc"
+version = "0.1.0"
+description = "pydbc monorepo — JDBC-inspired unified DB access for Python"
+requires-python = ">=3.12"
+dependencies = [
+    "alt-python-pydbc-core",
+    "alt-python-pydbc-sqlite",
+    "alt-python-pydbc-pg",
+]
+
+[tool.uv.workspace]
+members = [
+    "packages/core",
+    "packages/sqlite",
+    "packages/pg",
+]
+
+[tool.uv.sources]
+alt-python-pydbc-core = { workspace = true }
+alt-python-pydbc-sqlite = { workspace = true }
+alt-python-pydbc-pg = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+]
