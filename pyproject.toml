@@ -9,6 +9,7 @@ dependencies = [
     "alt-python-pydbc-pg",
     "alt-python-pydbc-mysql",
     "alt-python-pydbc-mssql",
+    "alt-python-pydbc-oracle",
     "pymssql>=2.3.13",
 ]
 
@@ -19,6 +20,7 @@ members = [
     "packages/pg",
     "packages/mysql",
     "packages/mssql",
+    "packages/oracle",
 ]
 
 [tool.uv.sources]
@@ -27,6 +29,7 @@ alt-python-pydbc-sqlite = { workspace = true }
 alt-python-pydbc-pg = { workspace = true }
 alt-python-pydbc-mysql = { workspace = true }
 alt-python-pydbc-mssql = { workspace = true }
+alt-python-pydbc-oracle = { workspace = true }
 
 [dependency-groups]
 dev = [

@@ -278,8 +278,8 @@ sc_ds.destroy()
 
 ## Next Steps
 
-- **API Reference** — detailed docs for every class and method are coming in the next documentation slice.
-- **Driver Guide** — connecting to PostgreSQL, MySQL, and SQL Server, plus writing your own driver, is covered in the driver guide (coming soon).
+- **API Reference** — detailed docs for every class and method: [docs/api-reference.md](api-reference.md).
+- **Driver Guide** — connecting to PostgreSQL, MySQL, and SQL Server, plus writing your own driver: [docs/driver-guide.md](driver-guide.md).
 - **Run the full demo yourself:**
 
   ```bash
