@@ -22,9 +22,9 @@ wrapping, prepared-statement state, context-manager support — is handled by
 `pydbc_core`.  In most cases a driver is fewer than fifteen lines of code.
 
 **When do you need a custom driver?**  When you want to use a DB-API 2.0
-module that pydbc doesn't already ship a driver for.  The four built-in
-drivers cover SQLite, PostgreSQL (psycopg2), MySQL (PyMySQL), and SQL Server
-(pymssql).  For any other database — Oracle, CockroachDB, DuckDB, Snowflake,
+module that pydbc doesn't already ship a driver for.  The five built-in
+drivers cover SQLite, PostgreSQL (psycopg2), MySQL (PyMySQL), SQL Server
+(pymssql), and Oracle (oracledb).  For any other database — CockroachDB, DuckDB, Snowflake,
 etc. — write a driver following this guide.
 
 ---
@@ -144,6 +144,12 @@ class MysqlDriver(GenericDbApiDriver):
 > **pymssql note:** pymssql uses `server=` (not `host=`) and requires `port`
 > as a *string*, not an int.  Always consult your module's `connect()` signature
 > before choosing kwargs names and types.
+
+> **oracledb note:** `oracledb.connect()` uses `user=`, `password=`, and
+> `dsn='host:port/service_name'`.  Pass `'numeric'` explicitly as the
+> paramstyle — pydbc forces numeric (`:1`, `:2`) for Oracle rather than
+> oracledb's native named style.  The pydbc URL format is
+> `pydbc:oracle://user:pw@host:1521/service_name`.
 
 ---
 

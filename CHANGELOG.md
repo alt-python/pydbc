@@ -41,5 +41,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/driver-guide.md` — guide for writing custom drivers
 - Per-package README files
 
+#### M005 — Oracle driver
+
+- `alt-python-pydbc-oracle` driver wrapping `oracledb` (python-oracledb, thin mode, numeric paramstyle); URL: `pydbc:oracle://user:pw@host:1521/service_name`
+
 [Unreleased]: https://keepachangelog.com/en/1.1.0/
 [0.1.0]: https://keepachangelog.com/en/1.1.0/
