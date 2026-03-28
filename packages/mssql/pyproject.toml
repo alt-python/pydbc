@@ -1,17 +1,18 @@
 [project]
 name = "alt-python-pydbc-mssql"
-version = "0.1.0"
+version = "1.0.0"
 description = "pydbc driver for Microsoft SQL Server — wraps pymssql"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [
-    {name = "Craig Parra", email = "craigparra@gmail.com"},
+    {name = "Craig Parravicini"},
+    {name = "Claude (Anthropic)"},
 ]
 keywords = ["database", "db-api", "jdbc", "sql", "sqlite", "postgresql", "mysql", "mssql"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",

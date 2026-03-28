@@ -54,12 +54,12 @@ dev = [
 
 [[package]]
 name = "alt-python-pydbc-core"
-version = "0.1.0"
+version = "1.0.0"
 source = { editable = "packages/core" }
 
 [[package]]
 name = "alt-python-pydbc-mssql"
-version = "0.1.0"
+version = "1.0.0"
 source = { editable = "packages/mssql" }
 dependencies = [
     { name = "alt-python-pydbc-core" },
@@ -74,7 +74,7 @@ requires-dist = [
 
 [[package]]
 name = "alt-python-pydbc-mysql"
-version = "0.1.0"
+version = "1.0.0"
 source = { editable = "packages/mysql" }
 dependencies = [
     { name = "alt-python-pydbc-core" },
@@ -91,7 +91,7 @@ requires-dist = [
 
 [[package]]
 name = "alt-python-pydbc-oracle"
-version = "0.1.0"
+version = "1.0.0"
 source = { editable = "packages/oracle" }
 dependencies = [
     { name = "alt-python-pydbc-core" },
@@ -106,7 +106,7 @@ requires-dist = [
 
 [[package]]
 name = "alt-python-pydbc-pg"
-version = "0.1.0"
+version = "1.0.0"
 source = { editable = "packages/pg" }
 dependencies = [
     { name = "alt-python-pydbc-core" },
@@ -121,7 +121,7 @@ requires-dist = [
 
 [[package]]
 name = "alt-python-pydbc-sqlite"
-version = "0.1.0"
+version = "1.0.0"
 source = { editable = "packages/sqlite" }
 dependencies = [
     { name = "alt-python-pydbc-core" },
