@@ -4,9 +4,32 @@ version = "0.1.0"
 description = "pydbc driver for SQLite — wraps stdlib sqlite3 (qmark paramstyle)"
 readme = "README.md"
 requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Craig Parra", email = "craigparra@gmail.com"},
+]
+keywords = ["database", "db-api", "jdbc", "sql", "sqlite", "postgresql", "mysql", "mssql"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Database :: Front-Ends",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "alt-python-pydbc-core",
 ]
+
+[project.urls]
+Homepage = "https://github.com/alt-python/pydbc"
+Repository = "https://github.com/alt-python/pydbc"
+Documentation = "https://github.com/alt-python/pydbc/blob/main/docs/getting-started.md"
+"Bug Tracker" = "https://github.com/alt-python/pydbc/issues"
 
 [build-system]
 requires = ["hatchling"]

@@ -68,8 +68,8 @@ This means you write SQL once and it works against any driver.
 
 ## Documentation
 
-- [Getting started tutorial](docs/getting-started.md)
-- [Core API reference](docs/api-reference.md)
+- [Getting started tutorial](https://github.com/alt-python/pydbc/blob/main/docs/getting-started.md)
+- [Core API reference](https://github.com/alt-python/pydbc/blob/main/docs/api-reference.md)
 
 ---
 

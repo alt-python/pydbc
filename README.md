@@ -111,8 +111,8 @@ ds.destroy()
 
 ## Documentation
 
-- [Getting Started](docs/getting-started.md) — tutorial walkthrough covering all five API areas with runnable SQLite examples
-- [API Reference](docs/api-reference.md) — detailed docs for every class and method exported from `pydbc_core`
+- [Getting Started](https://github.com/alt-python/pydbc/blob/main/docs/getting-started.md) — tutorial walkthrough covering all five API areas with runnable SQLite examples
+- [API Reference](https://github.com/alt-python/pydbc/blob/main/docs/api-reference.md) — detailed docs for every class and method exported from `pydbc_core`
 
 ---
 

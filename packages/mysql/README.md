@@ -71,8 +71,8 @@ need to know which style the underlying driver uses.
 
 ## Documentation
 
-- [Getting started tutorial](docs/getting-started.md)
-- [Core API reference](docs/api-reference.md)
+- [Getting started tutorial](https://github.com/alt-python/pydbc/blob/main/docs/getting-started.md)
+- [Core API reference](https://github.com/alt-python/pydbc/blob/main/docs/api-reference.md)
 
 ---
 
