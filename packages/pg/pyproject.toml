@@ -1,6 +1,6 @@
 [project]
 name = "alt-python-pydbc-pg"
-version = "1.0.0"
+version = "1.1.0"
 description = "pydbc driver for PostgreSQL — wraps psycopg2 (pyformat paramstyle)"
 readme = "README.md"
 requires-python = ">=3.12"

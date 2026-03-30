@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-03-30
+
 ### Added
 
 - `alt-python-pydbc-teradata` driver wrapping `teradatasql` (Teradata's official DBAPI2 package, qmark paramstyle); URL: `pydbc:teradata://user:pw@host:1025/dbname`
@@ -35,5 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/driver-guide.md` — guide for writing custom drivers
 - Per-package README files
 
-[Unreleased]: https://github.com/alt-python/pydbc/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/alt-python/pydbc/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/alt-python/pydbc/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/alt-python/pydbc/releases/tag/v1.0.0
