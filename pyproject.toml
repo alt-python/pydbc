@@ -10,6 +10,7 @@ dependencies = [
     "alt-python-pydbc-mysql",
     "alt-python-pydbc-mssql",
     "alt-python-pydbc-oracle",
+    "alt-python-pydbc-teradata",
     "pymssql>=2.3.13",
 ]
 
@@ -21,6 +22,7 @@ members = [
     "packages/mysql",
     "packages/mssql",
     "packages/oracle",
+    "packages/teradata",
 ]
 
 [tool.uv.sources]
@@ -30,6 +32,7 @@ alt-python-pydbc-pg = { workspace = true }
 alt-python-pydbc-mysql = { workspace = true }
 alt-python-pydbc-mssql = { workspace = true }
 alt-python-pydbc-oracle = { workspace = true }
+alt-python-pydbc-teradata = { workspace = true }
 
 [dependency-groups]
 dev = [
