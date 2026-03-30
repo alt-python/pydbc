@@ -11,7 +11,7 @@ A uniform database access layer for Python — wraps DB-API 2.0 drivers behind a
 - **One API across all databases.** The same `DriverManager`, `Connection`, `Statement`, `PreparedStatement`, and `ResultSet` types work with SQLite, PostgreSQL, MySQL, SQL Server, and Oracle. Switch databases by changing the URL, not the code.
 - **Automatic paramstyle translation.** Write `?` or `:name` SQL once. pydbc rewrites it to whatever the underlying driver expects (`%s`, `%(name)s`, `:1`, etc.) transparently.
 - **DataSource helpers.** `SingleConnectionDataSource`, `PooledDataSource`, and `NamedParameterDataSource` handle connection lifecycle so you don't have to.
-- **Not a new driver.** pydbc wraps the DB-API 2.0 drivers you already use (`sqlite3`, `psycopg2`, `PyMySQL`, `pymssql`, `oracledb`). It is an abstraction layer, not a replacement.
+- **Not a new driver.** pydbc wraps the DB-API 2.0 drivers you already use (`sqlite3`, `psycopg2`, `PyMySQL`, `pymssql`, `oracledb`, `teradatasql`). It is an abstraction layer, not a replacement.
 
 ---
 
@@ -34,6 +34,9 @@ uv add alt-python-pydbc-mssql
 
 # Oracle
 uv add alt-python-pydbc-oracle
+
+# Teradata
+uv add alt-python-pydbc-teradata
 ```
 
 ---
@@ -69,6 +72,7 @@ Importing the driver package (`pydbc_sqlite`, `pydbc_pg`, etc.) is the only regi
 | MySQL / MariaDB | `pydbc:mysql://user:pw@host:3306/dbname` | `alt-python-pydbc-mysql` | `PyMySQL` |
 | SQL Server | `pydbc:mssql://user:pw@host:1433/dbname` | `alt-python-pydbc-mssql` | `pymssql` |
 | Oracle | `pydbc:oracle://user:pw@host:1521/service_name` | `alt-python-pydbc-oracle` | `oracledb` |
+| Teradata | `pydbc:teradata://user:pw@host:1025/dbname` | `alt-python-pydbc-teradata` | `teradatasql` |
 
 ---
 
@@ -130,6 +134,7 @@ ds.destroy()
 | MySQL driver | `alt-python-pydbc-mysql` | `MysqlDriver` — wraps `PyMySQL`, `format` paramstyle |
 | SQL Server driver | `alt-python-pydbc-mssql` | `MssqlDriver` — wraps `pymssql`, `pyformat` paramstyle |
 | Oracle driver | `alt-python-pydbc-oracle` | `OracleDriver` — wraps `oracledb` (python-oracledb thin mode), `numeric` paramstyle |
+| Teradata driver | `alt-python-pydbc-teradata` | `TeradataDriver` — wraps `teradatasql`, `qmark` paramstyle |
 
 ---
 

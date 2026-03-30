@@ -22,9 +22,9 @@ wrapping, prepared-statement state, context-manager support — is handled by
 `pydbc_core`.  In most cases a driver is fewer than fifteen lines of code.
 
 **When do you need a custom driver?**  When you want to use a DB-API 2.0
-module that pydbc doesn't already ship a driver for.  The five built-in
+module that pydbc doesn't already ship a driver for.  The six built-in
 drivers cover SQLite, PostgreSQL (psycopg2), MySQL (PyMySQL), SQL Server
-(pymssql), and Oracle (oracledb).  For any other database — CockroachDB, DuckDB, Snowflake,
+(pymssql), Oracle (oracledb), and Teradata (teradatasql).  For any other database — CockroachDB, DuckDB, Snowflake,
 etc. — write a driver following this guide.
 
 ---
@@ -150,6 +150,12 @@ class MysqlDriver(GenericDbApiDriver):
 > paramstyle — pydbc forces numeric (`:1`, `:2`) for Oracle rather than
 > oracledb's native named style.  The pydbc URL format is
 > `pydbc:oracle://user:pw@host:1521/service_name`.
+
+> **teradatasql note:** teradatasql uses `dbs_port=` (not `port=`) and requires
+> the port as a *string*, not an int.  Omit the `database=` kwarg entirely when
+> the URL has no database path — passing `database=""` may error on some
+> Teradata versions.  Default port: 1025.  The pydbc URL format is
+> `pydbc:teradata://user:pw@host:1025/dbname`.
 
 ---
 

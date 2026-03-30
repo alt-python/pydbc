@@ -22,3 +22,22 @@ conn = DriverManager.get_connection(
     "pydbc:teradata://user:password@host:1025/mydb"
 )
 ```
+
+## Full Example
+
+```python
+conn = DriverManager.get_connection(
+    "pydbc:teradata://user:password@host:1025/mydb"
+)
+stmt = conn.create_statement()
+stmt.execute_update("CREATE TABLE t (n INTEGER)")
+stmt.execute_update("INSERT INTO t VALUES (?)", [42])
+conn.commit()
+
+rs = stmt.execute_query("SELECT n FROM t")
+print(rs.rows)   # [(42,)]
+
+conn.close()
+```
+
+Use `?` placeholders — Teradata driver uses qmark paramstyle.
